@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Nejire Refine
 // @namespace    http://nejiten.halfmoon.jp/
-// @version      0.1
+// @version      0.2
 // @description  ねじれ天国のUIを使いやすくするスクリプトです。
 // @author       euro_s
 // @match        http://nejiten.halfmoon.jp/index.cgi?vid=*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=halfmoon.jp
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 (function() {
@@ -250,15 +251,13 @@
     tr.style.display = 'none';
 
     var btn = document.createElement('span');
-    var btnMsg = document.createTextNode('秘▼');
+    var btnMsg = document.createTextNode('秘');
     btn.classList.add('hope_toggle');
     btn.appendChild(btnMsg);
     btn.onclick = () => {
       if (tr.style.display === 'none') {
-        btn.innerText = btn.innerText.replace('▼', '▲');
         tr.style.display = 'table-row';
       } else {
-        btn.innerText = btn.innerText.replace('▲', '▼');
         tr.style.display = 'none';
       }
     }
